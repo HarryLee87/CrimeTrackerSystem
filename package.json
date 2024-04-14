@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.6",
     "@prisma/client": "^5.12.1",
     "@types/bcrypt": "^5.0.2",
+    "@types/google.maps": "^3.55.7",
     "bcrypt": "^5.1.1",
     "iron-session": "^8.0.1",
     "next": "14.1.4",
