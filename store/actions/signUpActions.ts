@@ -9,6 +9,10 @@ import {
 import db from "@/lib/db";
 import { z } from "zod";
 import bcrypt from "bcrypt";
+import { getIronSession } from "iron-session";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import getSession from "@/lib/session";
 
 const checkPasswords = ({
   password,
@@ -105,8 +109,12 @@ export async function createAccount(prevState: any, formData: FormData) {
         id: true,
       },
     });
-    console.log(user);
+    // console.log(user);
     // log the user in
+    const session = await getSession();
+    session.id = user.id;
+    await session.save();
     // redirect "/home"
+    redirect("/");
   }
 }
