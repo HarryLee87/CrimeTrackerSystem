@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useSignInForm } from "@/hooks/auth/useSignInForm";
 import FormInput from "../layouts/Input";
 import FormBtn from "../layouts/Button";
 import { useFormState } from "react-dom";
@@ -9,8 +8,6 @@ import { login } from "@/store/actions/signInActions";
 import { PASSWORD_MAX_LENGTH, PASSWORD_MIN_LENGTH } from "@/lib/constants";
 
 export default function SignInForm() {
-  // const { email, setEmail, password, setPassword, handleSignIn } =
-  //   useSignInForm();
   const [state, dispatch] = useFormState(login, null);
 
   return (
@@ -34,33 +31,7 @@ export default function SignInForm() {
               maxLength={PASSWORD_MAX_LENGTH}
               errors={state?.fieldErrors.password}
             />
-            {/* <div className="relative">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none placeholder:text-neutral-400"
-              />
-            </div>
-            <div className="relative mt-4">
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none placeholder:text-neutral-400"
-              />
-            </div> */}
             <FormBtn text="Log In" />
-            {/* <button
-              className="w-full bg-red-500 text-white p-2 mt-4 rounded-md"
-              onClick={handleSignIn}
-            >
-              Sign In
-            </button> */}
           </form>
 
           <div className="flex flex-col items-center justify-center py-3">
