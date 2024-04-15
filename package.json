@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "csv-to-json": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"CommonJS\"}' ts-node ./utils/csvToJson.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -14,6 +15,8 @@
     "@types/bcrypt": "^5.0.2",
     "@types/google.maps": "^3.55.7",
     "bcrypt": "^5.1.1",
+    "csv-parse": "^5.5.5",
+    "fs-extra": "^11.2.0",
     "iron-session": "^8.0.1",
     "next": "14.1.4",
     "prisma": "^5.12.1",
@@ -30,6 +33,7 @@
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
